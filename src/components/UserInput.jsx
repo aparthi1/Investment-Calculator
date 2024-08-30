@@ -11,7 +11,7 @@ export default function userInput() {
     initialInverstment: 15000,
     annualInverstment: 900,
     expectedReturns: 5.5,
-    duration: 12,
+    duration: 0,
   });
   function handleChange(identifyValues, inputValues) {
      setUserInput((prevInput) => {
