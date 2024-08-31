@@ -9,10 +9,11 @@ export default function Table({ OutPut=[] }) {
        value = OutPut.map((out) => (
         <tr key={out.year}>
           <td>{out.year}</td>
-          <td>{out.valueEndOfYear}</td>
+               <td>{out.valueEndOfYear}</td>
+               <td>{out.perMonth}</td>
           <td>{out.interest}</td>
           <td>{out.TotalIntrest}</td>
-          <td>{out.investedCapital}</td>
+               <td>{out.investedCapital}</td>              
         </tr>
       ));
     }
@@ -22,10 +23,11 @@ export default function Table({ OutPut=[] }) {
       <tbody>
         <tr>
           <th>Year</th>
-          <th>Investment Value</th>
+                  <th>Investment Value</th>
+                  <th>Per Month</th>
           <th>Interest (Year)</th>
           <th>Total Interest</th>
-          <th>Invested Capital</th>
+          <th>Invested Capital</th>         
         </tr>
         {value}
       </tbody>

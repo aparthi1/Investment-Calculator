@@ -17,19 +17,22 @@ export function calculateInvestmentResults(
   let expectedReturnValue=parseFloat(expectedReturn);
   let annualInvestmentValue=parseFloat(annualInvestment);
   let investedCapital=investmentValue;
-  let TotalIntrest=0;
+    let TotalIntrest = 0;
+    let perMonth = 0;
   for (let i = 0; i < duration; i++) {
     const interestEarnedInYear = investmentValue * (expectedReturnValue / 100);
      TotalIntrest+=interestEarnedInYear
     investmentValue += interestEarnedInYear + annualInvestmentValue;
-    investedCapital+=annualInvestmentValue
+      investedCapital += annualInvestmentValue;
+      perMonth = investmentValue / 12;
     annualData.push({
       year: i + 1, 
       interest: formatter.format(interestEarnedInYear), 
       valueEndOfYear: formatter.format(investmentValue), 
       annualInvestment: formatter.format(annualInvestmentValue),
       investedCapital: formatter.format(investedCapital), 
-      TotalIntrest: formatter.format(TotalIntrest), 
+        TotalIntrest: formatter.format(TotalIntrest), 
+        perMonth: formatter.format(perMonth), 
     });
   }
 
